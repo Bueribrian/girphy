@@ -1,0 +1,30 @@
+<nav class="navbar container bg-light">
+    <div class="navbar-logo">
+        <a href="">
+            <img src="./assets/images/logo-light.svg" alt="">
+        </a>
+    </div>
+    <div class="navbar-links hidden" #navlist>
+        <a href="login" class="navbar-links__navigation">
+            Login
+        </a>
+        <a href="register" class="navbar-links__navigation">
+            Register
+        </a>
+        <a href="upload" class="navbar-links__navigation">
+            Upload a gif
+        </a>
+        <a href="admin" class="navbar-links__navigation btn btn-underline">
+            Admin
+        </a>
+        <div class="navbar-links-themeController">
+            <form action="">
+                <label for="theme"></label>
+                <input type="checkbox" name="theme" id="theme">
+            </form>
+        </div>
+    </div>
+    <div class="btn-burguer" (click)="show(navlist)">
+            &#x2630;
+    </div>
+</nav>
