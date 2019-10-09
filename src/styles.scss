@@ -1,1 +1,91 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    padding:0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+}
+html,body{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+    color: #707070;
+}
+.container{
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.btn{
+    padding: .2rem 1.5rem;
+    border: .5px solid #7104FF;
+    color: #7104FF !important;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: .3s all;
+
+    &:hover{
+        background: #7104FF !important;
+        color: white !important;
+        transition: .3s all;
+    }
+}
+.bg-path{
+    width: 100%;
+    height: 80vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    clip-path: polygon(0 0, 0 66%, 100% 0);
+    z-index: -1;
+}
+
+.bg-color-purple{
+    background: #967DFF;
+}
+.bg-color-yellow{
+    background: #E2FF80;
+}
+.bg-color-pink{
+    background: #FF7DBE;
+}
+
+.bg-light{
+    background: #ffffff;
+}
+
+@keyframes letterGame{
+    0%{
+          transform: translateX(-8px)
+    }
+    33%{
+          transform: translateX(16px)
+           
+    }
+    66%{
+          transform: translateX(-3px)
+            
+    }
+    99%{
+          transform: translateX(4px)
+           
+    }
+    100%{
+        transform: translateX(-2px)
+          
+    }
+}
+
+@keyframes popUp{
+    0%{
+        opacity: .3;
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1.1)
+    }
+    70%{
+        transform: scale(.8)
+    }
+}
