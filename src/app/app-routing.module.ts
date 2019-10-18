@@ -6,6 +6,7 @@ import { NotFoundComponent } from "./pages/not-found/not-found.component";
 import { RegisterComponent } from './pages/register/register.component';
 import { UploadComponent } from './pages/upload/upload.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -22,7 +23,8 @@ const routes: Routes = [
   },
   {
     path:'upload',
-    component: UploadComponent
+    component: UploadComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:'admin',

@@ -14,9 +14,11 @@
         <a href="upload" class="navbar-links__navigation">
             Upload a gif
         </a>
-        <a href="admin" class="navbar-links__navigation btn btn-underline">
-            Admin
-        </a>
+        <div *ngIf="auth.user$.admin | async as user">
+            <a  href="admin" class="navbar-links__navigation btn btn-underline">
+                Admin
+            </a>    
+        </div>
         <div class="navbar-links-themeController">
             <form action="">
                 <label for="theme"></label>
@@ -28,3 +30,4 @@
             &#x2630;
     </div>
 </nav>
+
