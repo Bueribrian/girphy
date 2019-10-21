@@ -1,2 +1,4 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<main [ngClass]="{'dark-theme':auth.themeDark}">
+    <app-navbar style="z-index:999 !important" ></app-navbar>
+    <router-outlet  ></router-outlet>
+</main>

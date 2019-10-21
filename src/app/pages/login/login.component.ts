@@ -14,5 +14,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+  testMail(e){
+    let email = e.email
+    let password = e.password
+    this.auth.signInWithMail(email, password)
+    
+  }
 
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from './components/navbar/navbar.component'
+import { AuthService} from './services/auth.service'
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,5 @@ import { NavbarComponent } from './components/navbar/navbar.component'
 })
 export class AppComponent {
   title = 'gyrphy';
+  constructor(private auth:AuthService){}
 }

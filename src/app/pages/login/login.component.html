@@ -1,14 +1,23 @@
-<div class="bg-path bg-color-pink"></div>
-<div *ngIf="auth.user$ | async; then authenticated else guest">
-    <!-- template will replace this div -->
+<!-- <div class="bg-path bg-color-pink"></div> -->
+
+<div class="container">
+    <div *ngIf="auth.user$ | async; then authenticated else guest">
+        <!-- template will replace this div -->
+    </div>
 </div>
 
 <!-- User NOT logged in -->
 <ng-template #guest>
-<h3>Howdy, GUEST</h3>
-<p>Login to get started...</p>
-
-<button (click)="auth.googleSignin()">
+<h3>Bienvenido,</h3>
+<p>Logueate para empezar...</p>
+<form #f='ngForm' (ngSubmit)='testMail(f.value)' action="">
+    <input type="text" name="email" id="" ngModel>
+    <input type="password" name="password" id="" ngModel>
+    <input  type='submit' class="btn btn-purple" value="Submit with mail">
+      
+     
+</form>
+<button class="btn btn-purple" (click)="auth.googleSignin()">
     <i class="fa fa-google"></i> Connect Google
 </button>
 
@@ -18,11 +27,13 @@
 <!-- User logged in -->
 <ng-template #authenticated>
 <div *ngIf="auth.user$ | async as user">
-    <h3>Howdy, {{ user.displayName }}</h3>
-    <img  [src]="user.photoURL">
-    <p>UID: {{ user.uid }}</p>
-    <p>ThemeDark: {{user.themeDark}}</p>
-    <p>Admin : {{user.admin}}</p>
-    <button (click)="auth.signOut()">Logout</button>
+    <h2 class='mb-2'>Bienvenido {{ user.displayName }}</h2>
+    <div class="perfil-img my-1">
+        <img  [src]="user.photoURL">
+    </div>
+    <!-- <p>UID: {{ user.uid }}</p> -->
+    <p class='my-1'>ThemeDark: {{user.themeDark}}</p>
+    <p class='my-1'>Admin : {{user.admin}}</p>
+    <button class='btn btn-logout my-3' (click)="auth.signOut()">Logout</button>
 </div>
 </ng-template>

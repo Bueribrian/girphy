@@ -16,6 +16,7 @@ import { switchMap  } from "rxjs/operators";
 export class AuthService {
 
   user$: Observable<User>;
+  themeDark: boolean = false;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -59,15 +60,32 @@ export class AuthService {
 
    async signOut(){
      await this.afAuth.auth.signOut();
-     this.router.navigate(['/']);
+     this.router.navigate(['/login']);
    }
 
-   async getUser(){
-     return this.user$;
-   }
+  
 
-   async getThemeUser(){
-     return this.user$
+   signUpWithMail(email, password){
+     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+      .then((result)=>{
+        window.alert('You have been successfully registered')
+        console.log(result.user)
+      }).catch(error=>{
+        window.alert(error.message)
+      })
    }
-
+   signInWithMail(email,password){
+     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      .then(result=>{
+        this.updateUserData(result.user)
+        this.router.navigate(['/profile'])
+      }).catch(error=>{
+        window.alert(error.message)
+      })
+   }
+   changeTheme(){
+     this.themeDark = !this.themeDark
+     console.log('cambio tema...',this.themeDark)
+   }
 }
+

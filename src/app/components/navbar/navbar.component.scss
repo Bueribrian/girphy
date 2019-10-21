@@ -1,13 +1,17 @@
 .navbar{
-    height: 4rem;
+   
     box-shadow: 0px 3px 6px #00000030;
     display: flex;
+    position: absolute;
+    top: 20px;
+    width: 90%;
+    margin: 0 5%;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
-    padding: 0rem 2rem;
+    background: white;
+    padding: .4rem 2rem;
     border-radius: 4px;
-    z-index: 9999;
+    z-index: 9999999999999999;
 
     &-links{
         display: flex;
@@ -43,6 +47,7 @@
     @media screen and (max-width: 980px){
         width: 100% !important;
         margin-top:0px;
+        margin:0px;
     }
 }
 
@@ -59,4 +64,28 @@
     @media screen and (max-width:980px){
         transform: translateY(-150%)
     }
+}
+.theme-switcher{
+    width: 40px;
+    height: 20px;
+    background: gray;
+    display: flex;
+    padding: 5px 0px;
+    border-radius:24px;
+    justify-content: flex-end;
+    align-items: center;
+    transition: .3s all;
+    cursor: pointer;
+
+    &-button{
+        width: 27px;
+        height: 27px;
+        background: red;
+        border-radius: 50%;
+        transition: .3s all;
+        transform: translateX(5px);
+    }
+}
+.themeDarkSwitch .theme-switcher-button{
+    transform: translateX(-20px);
 }

@@ -5,25 +5,32 @@
         </a>
     </div>
     <div class="navbar-links hidden" #navlist>
-        <a href="login" class="navbar-links__navigation">
+        <a *ngIf="auth.user$"  href="login" class="navbar-links__navigation">
             Login
         </a>
-        <a href="register" class="navbar-links__navigation">
+        <a *ngIf="auth.user$" href="register" class="navbar-links__navigation">
             Register
         </a>
-        <a href="upload" class="navbar-links__navigation">
+        <a *ngIf="auth.user$ | async as user" href="upload" class="navbar-links__navigation">
             Upload a gif
+        </a>
+        <a *ngIf="auth.user$ | async as user" href="" class="navbar-links__navigation" (click)="auth.signOut()" >
+                Logout
+        </a>
+        <a *ngIf="auth.user$ | async as user" href="profile" class="navbar-links__navigation" >
+            Profile
         </a>
         <div *ngIf="auth.user$.admin | async as user">
             <a  href="admin" class="navbar-links__navigation btn btn-underline">
                 Admin
             </a>    
         </div>
-        <div class="navbar-links-themeController">
-            <form action="">
-                <label for="theme"></label>
-                <input type="checkbox" name="theme" id="theme">
-            </form>
+        <div *ngIf="auth.user$ | async as user"  class="navbar-links-themeController">
+             <div  [ngClass]="{
+                'themeDarkSwitch': auth.themeDark
+              }" (click)="auth.changeTheme()" class="theme-switcher">
+                 <div class="theme-switcher-button"></div>
+             </div>
         </div>
     </div>
     <div class="btn-burguer" (click)="show(navlist)">

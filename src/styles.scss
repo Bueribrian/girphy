@@ -3,6 +3,7 @@
     padding:0px;
     margin: 0px;
     box-sizing: border-box;
+    transition: .3s all;
 
 }
 html,body{
@@ -11,25 +12,59 @@ html,body{
     line-height: 1.5;
     color: #707070;
 }
+// Clases de utilidad
+.my-{
+    &1{margin: 1rem 0;}
+    &2{margin: 2rem 0;}
+    &3{margin: 3rem 0;}
+    &4{margin: 4rem 0;}
+    &5{margin: 5rem 0;}
+}
+.mb-{
+    &1{margin-bottom: 1rem;}
+    &2{margin-bottom: 2rem;}
+    &3{margin-bottom: 3rem;}
+    &4{margin-bottom: 4rem;}
+    &5{margin-bottom: 5rem;}
+}
 .container{
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
 }
 
-.btn{
-    padding: .2rem 2rem;
+.btn-purple{
     border: .5px solid #7104FF;
     color: #7104FF !important;
+    background: #7104FF !important;
+    color: white !important;
+    transition: .3s all;
+    cursor: pointer;
+   
+}
+
+.btn{
+    padding: .8rem 4rem;
     border-radius: 12px;
     box-sizing: border-box;
     transition: .3s all;
-
-    &:hover{
-        background: #7104FF !important;
-        color: white !important;
-        transition: .3s all;
-    }
+    background: transparent;
+}
+.btn-logout{
+    
+    border: .5px solid crimson;
+    background: crimson !important;
+    color: crimson !important;
+    cursor: pointer;
+    color: white !important;
+   
+}
+.bg-of-path{
+    width: 100%;
+    height: 80vh;
+    background: white;
+    z-index: 20;
+    position: absolute;
 }
 .bg-path{
     width: 100%;
@@ -38,7 +73,7 @@ html,body{
     top: 0px;
     left: 0px;
     clip-path: polygon(0 0, 0 66%, 100% 0);
-    z-index: -1;
+   
 }
 
 .bg-color-purple{background: #967DFF;}
@@ -47,3 +82,12 @@ html,body{
 
 .bg-light{background: #ffffff;}
 
+main{
+    width: 100%;
+    min-height: 100vh;
+}
+.dark-theme{
+    transition: .3s all;
+    background: black;
+    color: white;
+}

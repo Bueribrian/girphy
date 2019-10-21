@@ -1,3 +1,27 @@
-<div class="bg-path bg-color-yellow">
-
+<div class="bg-path bg-color-yellow"></div>
+<div class="container">
+    <h2>Register</h2>
+    <form #userForm="ngForm"  (ngSubmit)='submit(userForm.value)' class='form-controll' action="">
+        <div class="input-box">
+            <label for="username">Username</label> 
+             <input ngModel type="text" name="username">
+             {{errorUser}}
+        </div>
+        <div class="input-box">
+            <label for="email">Email</label> 
+             <input ngModel type="email" name='email'>
+             {{errorEmail}}
+        </div>
+        <div class="input-box">
+            <label for="password">Password</label> 
+             <input ngModel type="password" name="password" id="password">
+             {{errorPassword}}
+        </div>
+        <div class="input-box">
+            <label for="repassword">Re - passowrd</label> 
+             <input ngModel type="password" name="repassword" id="repassword">
+             {{errorRePassword}}
+        </div>
+        <input class='btn btn-purple'value="submit" type="submit">
+    </form>
 </div>

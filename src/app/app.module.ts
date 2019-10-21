@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { AuthGuard } from './auth.guard';
@@ -25,6 +26,7 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { UploadComponent } from './pages/upload/upload.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -35,10 +37,12 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     AdminComponent,
     UploadComponent,
     NavbarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     AngularFireModule.initializeApp(config),

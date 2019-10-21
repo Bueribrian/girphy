@@ -1,0 +1,29 @@
+.container{
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 5rem;
+    border-radius: 18px;
+    -webkit-box-shadow: 4px 3px 13px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 3px 13px -5px rgba(0,0,0,0.75);
+    box-shadow: 4px 3px 13px -5px rgba(0,0,0,0.75);
+    background: #fefefe;
+    padding: 5rem;
+    text-align: center;
+}
+
+.form-controll{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.input-box{
+    margin: 1rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    & label{
+        width: 100%;
+    }
+}
